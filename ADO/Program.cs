@@ -40,10 +40,7 @@ namespace ADO
 			//command.CommandText = "SELECT COUNT(*) FROM Movies";
 			//Console.WriteLine($"Количество записей:\t{command.ExecuteScalar()}");
 
-
-
 			connection.Close();
-
 
 		}
 	}
