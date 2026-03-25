@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 using System.Data.SqlClient;
 
-namespace ADO
+namespace DBTools
 {
-	internal class Connector
+	public class Connector
 	{
 		string connection_string;
 		SqlConnection connection;
@@ -44,7 +44,7 @@ namespace ADO
 			connection.Close();
 		}
 
-		public void Select(string fields, string tables, string condition ="")
+		public void Select(string fields, string tables, string condition = "")
 		{
 			string cmd = $"SELECT {fields} FROM {tables}";
 			if (condition != "") cmd += $" WHERE {condition}";
@@ -76,17 +76,17 @@ namespace ADO
 			reader.Close();
 			connection.Close();
 			return (int)Scalar($"SELECT MAX ({pk_name}) FROM {table}");
-			
+
 		}
 
-		public int GetNextPrimaryKey (string table)
+		public int GetNextPrimaryKey(string table)
 		{
 			return GetMaxPrimaryKey(table) + 1;
 		}
 
 		public string GetPrimaryKeyColumnName(string table)
 		{
-			string raw = @"RAW string";		// RAW-строка игнорирует переносы
+			string raw = @"RAW string";     // RAW-строка игнорирует переносы
 
 			string cmd = $@"SELECT INFORMATION_SCHEMA.KEY_COLUMN_USAGE.COLUMN_NAME
 FROM    INFORMATION_SCHEMA.KEY_COLUMN_USAGE
@@ -96,7 +96,7 @@ AND CONSTRAINT_NAME LIKE N'PK_%'";
 
 		}
 
-		public void Insert (string cmd)
+		public void Insert(string cmd)
 		{
 
 			SqlCommand command = new SqlCommand(cmd, connection);
@@ -110,7 +110,7 @@ AND CONSTRAINT_NAME LIKE N'PK_%'";
 			{
 				Console.WriteLine(ex.GetType());
 				Console.WriteLine(ex.Message);
-				if(ex.GetType()  == typeof(SqlException) && ex.Message.Contains("_id"))
+				if (ex.GetType() == typeof(SqlException) && ex.Message.Contains("_id"))
 				{
 
 					Console.WriteLine("Good");
@@ -128,11 +128,11 @@ AND CONSTRAINT_NAME LIKE N'PK_%'";
 			string parsed_values = $"N'{s_values[0]}',";
 
 			for (int i = 1; i < s_fields.Length; i++)
-			{ 
+			{
 				condition += $" {s_fields[i]}=N'{s_values[i]}'";
-				parsed_values += s_values[i][0] != 'N' && s_values[i][1] != '\'' ? $"N'{s_values[i]}'" : s_values[i];			
-				if (i!=s_fields.Length-1)
-				{ 
+				parsed_values += s_values[i][0] != 'N' && s_values[i][1] != '\'' ? $"N'{s_values[i]}'" : s_values[i];
+				if (i != s_fields.Length - 1)
+				{
 					condition += "AND";
 					parsed_values += ",";
 				}
@@ -140,7 +140,7 @@ AND CONSTRAINT_NAME LIKE N'PK_%'";
 			string cmd = $"IF NOT EXISTS (SELECT {fields} FROM {table} WHERE {condition})";
 			cmd += $"INSERT {table}({fields}) VALUES ({parsed_values})";
 			Insert(cmd);
-		
+
 		}
 
 	}
