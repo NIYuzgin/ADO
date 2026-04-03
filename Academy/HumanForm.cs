@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -10,16 +11,22 @@ using System.Windows.Forms;
 
 namespace Academy
 {
-	public partial class HumanForm : Form
+	public abstract partial class HumanForm : Form
 	{
+
+		//static protected DBTools.Connector connector;
 		public HumanForm()
 		{
 			InitializeComponent();
-		}
+			//connector = new DBTools.Connector(ConfigurationManager.ConnectionStrings["PV_521_Import"].ConnectionString);
 
-		private void tbFirstName_TextChanged(object sender, EventArgs e)
-		{
 
 		}
+
+		protected abstract void buttonOK_Click(object sender, EventArgs e);
+		
+
+
+
 	}
 }

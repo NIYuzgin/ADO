@@ -36,14 +36,14 @@
 			this.tbFirstName = new System.Windows.Forms.TextBox();
 			this.tbMiddleName = new System.Windows.Forms.TextBox();
 			this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
-			this.pbPhoto = new System.Windows.Forms.PictureBox();
-			this.buttonBrows = new System.Windows.Forms.Button();
+			this.buttonBrowse = new System.Windows.Forms.Button();
 			this.tbEmail = new System.Windows.Forms.TextBox();
 			this.tbPhone = new System.Windows.Forms.TextBox();
 			this.labelEmail = new System.Windows.Forms.Label();
 			this.labelPhone = new System.Windows.Forms.Label();
 			this.buttonOK = new System.Windows.Forms.Button();
-			this.buttonCansel = new System.Windows.Forms.Button();
+			this.buttonCancel = new System.Windows.Forms.Button();
+			this.pbPhoto = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -51,7 +51,7 @@
 			// 
 			this.labelLastName.AutoSize = true;
 			this.labelLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.labelLastName.Location = new System.Drawing.Point(97, 33);
+			this.labelLastName.Location = new System.Drawing.Point(99, 33);
 			this.labelLastName.Name = "labelLastName";
 			this.labelLastName.Size = new System.Drawing.Size(110, 25);
 			this.labelLastName.TabIndex = 0;
@@ -61,7 +61,7 @@
 			// 
 			this.labelFirstName.AutoSize = true;
 			this.labelFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.labelFirstName.Location = new System.Drawing.Point(148, 86);
+			this.labelFirstName.Location = new System.Drawing.Point(150, 84);
 			this.labelFirstName.Name = "labelFirstName";
 			this.labelFirstName.Size = new System.Drawing.Size(59, 25);
 			this.labelFirstName.TabIndex = 1;
@@ -71,7 +71,7 @@
 			// 
 			this.labelMiddleName.AutoSize = true;
 			this.labelMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.labelMiddleName.Location = new System.Drawing.Point(96, 139);
+			this.labelMiddleName.Location = new System.Drawing.Point(98, 139);
 			this.labelMiddleName.Name = "labelMiddleName";
 			this.labelMiddleName.Size = new System.Drawing.Size(111, 25);
 			this.labelMiddleName.TabIndex = 2;
@@ -81,7 +81,7 @@
 			// 
 			this.labelBirthDate.AutoSize = true;
 			this.labelBirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.labelBirthDate.Location = new System.Drawing.Point(35, 192);
+			this.labelBirthDate.Location = new System.Drawing.Point(37, 189);
 			this.labelBirthDate.Name = "labelBirthDate";
 			this.labelBirthDate.Size = new System.Drawing.Size(172, 25);
 			this.labelBirthDate.TabIndex = 3;
@@ -108,7 +108,6 @@
 			this.tbFirstName.Name = "tbFirstName";
 			this.tbFirstName.Size = new System.Drawing.Size(325, 31);
 			this.tbFirstName.TabIndex = 5;
-			this.tbFirstName.TextChanged += new System.EventHandler(this.tbFirstName_TextChanged);
 			// 
 			// tbMiddleName
 			// 
@@ -126,30 +125,20 @@
 			this.dtpBirthDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.dtpBirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtpBirthDate.Location = new System.Drawing.Point(251, 189);
+			this.dtpBirthDate.Location = new System.Drawing.Point(251, 186);
 			this.dtpBirthDate.Name = "dtpBirthDate";
 			this.dtpBirthDate.Size = new System.Drawing.Size(325, 31);
 			this.dtpBirthDate.TabIndex = 7;
 			// 
-			// pbPhoto
+			// buttonBrowse
 			// 
-			this.pbPhoto.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.pbPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pbPhoto.Location = new System.Drawing.Point(598, 30);
-			this.pbPhoto.Name = "pbPhoto";
-			this.pbPhoto.Size = new System.Drawing.Size(190, 285);
-			this.pbPhoto.TabIndex = 8;
-			this.pbPhoto.TabStop = false;
-			// 
-			// buttonBrows
-			// 
-			this.buttonBrows.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.buttonBrows.Location = new System.Drawing.Point(598, 321);
-			this.buttonBrows.Name = "buttonBrows";
-			this.buttonBrows.Size = new System.Drawing.Size(190, 32);
-			this.buttonBrows.TabIndex = 9;
-			this.buttonBrows.Text = "Обзор";
-			this.buttonBrows.UseVisualStyleBackColor = true;
+			this.buttonBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.buttonBrowse.Location = new System.Drawing.Point(598, 321);
+			this.buttonBrowse.Name = "buttonBrowse";
+			this.buttonBrowse.Size = new System.Drawing.Size(190, 32);
+			this.buttonBrowse.TabIndex = 9;
+			this.buttonBrowse.Text = "Обзор";
+			this.buttonBrowse.UseVisualStyleBackColor = true;
 			// 
 			// tbEmail
 			// 
@@ -168,7 +157,7 @@
 			this.tbPhone.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
 			this.tbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.tbPhone.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.tbPhone.Location = new System.Drawing.Point(251, 284);
+			this.tbPhone.Location = new System.Drawing.Point(251, 285);
 			this.tbPhone.Name = "tbPhone";
 			this.tbPhone.Size = new System.Drawing.Size(325, 31);
 			this.tbPhone.TabIndex = 11;
@@ -177,7 +166,7 @@
 			// 
 			this.labelEmail.AutoSize = true;
 			this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.labelEmail.Location = new System.Drawing.Point(129, 241);
+			this.labelEmail.Location = new System.Drawing.Point(131, 237);
 			this.labelEmail.Name = "labelEmail";
 			this.labelEmail.Size = new System.Drawing.Size(78, 25);
 			this.labelEmail.TabIndex = 12;
@@ -187,7 +176,7 @@
 			// 
 			this.labelPhone.AutoSize = true;
 			this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.labelPhone.Location = new System.Drawing.Point(129, 290);
+			this.labelPhone.Location = new System.Drawing.Point(129, 288);
 			this.labelPhone.Name = "labelPhone";
 			this.labelPhone.Size = new System.Drawing.Size(80, 25);
 			this.labelPhone.TabIndex = 13;
@@ -203,30 +192,41 @@
 			this.buttonOK.TabIndex = 14;
 			this.buttonOK.Text = "OK";
 			this.buttonOK.UseVisualStyleBackColor = true;
+			this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
 			// 
-			// buttonCansel
+			// buttonCancel
 			// 
-			this.buttonCansel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.buttonCansel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.buttonCansel.Location = new System.Drawing.Point(646, 380);
-			this.buttonCansel.Name = "buttonCansel";
-			this.buttonCansel.Size = new System.Drawing.Size(131, 32);
-			this.buttonCansel.TabIndex = 15;
-			this.buttonCansel.Text = "Cancel";
-			this.buttonCansel.UseVisualStyleBackColor = true;
+			this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.buttonCancel.Location = new System.Drawing.Point(646, 380);
+			this.buttonCancel.Name = "buttonCancel";
+			this.buttonCancel.Size = new System.Drawing.Size(131, 32);
+			this.buttonCancel.TabIndex = 15;
+			this.buttonCancel.Text = "Cancel";
+			this.buttonCancel.UseVisualStyleBackColor = true;
+			// 
+			// pbPhoto
+			// 
+			this.pbPhoto.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.pbPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pbPhoto.Location = new System.Drawing.Point(598, 30);
+			this.pbPhoto.Name = "pbPhoto";
+			this.pbPhoto.Size = new System.Drawing.Size(190, 285);
+			this.pbPhoto.TabIndex = 8;
+			this.pbPhoto.TabStop = false;
 			// 
 			// HumanForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(805, 424);
-			this.Controls.Add(this.buttonCansel);
+			this.Controls.Add(this.buttonCancel);
 			this.Controls.Add(this.buttonOK);
 			this.Controls.Add(this.labelPhone);
 			this.Controls.Add(this.labelEmail);
 			this.Controls.Add(this.tbPhone);
 			this.Controls.Add(this.tbEmail);
-			this.Controls.Add(this.buttonBrows);
+			this.Controls.Add(this.buttonBrowse);
 			this.Controls.Add(this.pbPhoto);
 			this.Controls.Add(this.dtpBirthDate);
 			this.Controls.Add(this.tbMiddleName);
@@ -237,6 +237,8 @@
 			this.Controls.Add(this.labelFirstName);
 			this.Controls.Add(this.labelLastName);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "HumanForm";
 			this.ShowInTaskbar = false;
 			this.Text = "HumanForm";
@@ -252,17 +254,17 @@
 		private System.Windows.Forms.Label labelFirstName;
 		private System.Windows.Forms.Label labelMiddleName;
 		private System.Windows.Forms.Label labelBirthDate;
-		private System.Windows.Forms.TextBox tbLastName;
-		private System.Windows.Forms.TextBox tbFirstName;
-		private System.Windows.Forms.TextBox tbMiddleName;
-		private System.Windows.Forms.DateTimePicker dtpBirthDate;
-		private System.Windows.Forms.PictureBox pbPhoto;
-		private System.Windows.Forms.Button buttonBrows;
-		private System.Windows.Forms.TextBox tbEmail;
-		private System.Windows.Forms.TextBox tbPhone;
+		private System.Windows.Forms.Button buttonBrowse;
 		private System.Windows.Forms.Label labelEmail;
 		private System.Windows.Forms.Label labelPhone;
 		private System.Windows.Forms.Button buttonOK;
-		private System.Windows.Forms.Button buttonCansel;
+		private System.Windows.Forms.Button buttonCancel;
+		protected System.Windows.Forms.TextBox tbLastName;
+		protected System.Windows.Forms.TextBox tbFirstName;
+		protected System.Windows.Forms.TextBox tbMiddleName;
+		protected System.Windows.Forms.DateTimePicker dtpBirthDate;
+		protected System.Windows.Forms.TextBox tbEmail;
+		protected System.Windows.Forms.TextBox tbPhone;
+		protected System.Windows.Forms.PictureBox pbPhoto;
 	}
 }
