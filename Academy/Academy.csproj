@@ -57,6 +57,8 @@
     <Compile Include="HumanForm.Designer.cs">
       <DependentUpon>HumanForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Human.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Query.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
