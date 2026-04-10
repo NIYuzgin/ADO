@@ -136,8 +136,9 @@ namespace Academy
 				(
 				Convert.ToInt32(dgvStudents.Rows[e.RowIndex].Cells["stud_id"].Value)
 				);
-			form.ShowDialog();
-
+			//form.ShowDialog();
+			if(form.ShowDialog() == DialogResult.OK)
+				tabControl_SelectedIndexChanged(tabControl,null);
 		}
 	}
 }

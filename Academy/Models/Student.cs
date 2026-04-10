@@ -12,11 +12,12 @@ namespace Academy.Models
 		internal int group;
 		public Student
 			(
+			int id,
 			string last_name, string first_name, string middle_name,
 			string birth_date, string email, string phone, Image photo,
 			int group
 
-			):base(last_name, first_name, middle_name, birth_date, email, phone, photo)
+			):base(id, last_name, first_name, middle_name, birth_date, email, phone, photo)
 		{
 			this.group = group;
 		}
@@ -38,7 +39,15 @@ namespace Academy.Models
 		{
 			return $"{base.GetValues()},{group}";
 		}
-		
+		public override string GetCondition()
+		{
+			return base.GetCondition()+ $" AND [group] = {group}";
+		}
+		public string GetUpdateString()
+		{
+			return GetCondition().Replace(" AND ", ",");
+
+		}
 
 
 	}

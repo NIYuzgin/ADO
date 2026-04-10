@@ -44,6 +44,7 @@
 			this.buttonOK = new System.Windows.Forms.Button();
 			this.buttonCancel = new System.Windows.Forms.Button();
 			this.pbPhoto = new System.Windows.Forms.PictureBox();
+			this.labelID = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -215,11 +216,21 @@
 			this.pbPhoto.TabIndex = 8;
 			this.pbPhoto.TabStop = false;
 			// 
+			// labelID
+			// 
+			this.labelID.AutoSize = true;
+			this.labelID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.labelID.Location = new System.Drawing.Point(42, 380);
+			this.labelID.Name = "labelID";
+			this.labelID.Size = new System.Drawing.Size(0, 25);
+			this.labelID.TabIndex = 16;
+			// 
 			// HumanForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(805, 424);
+			this.Controls.Add(this.labelID);
 			this.Controls.Add(this.buttonCancel);
 			this.Controls.Add(this.buttonOK);
 			this.Controls.Add(this.labelPhone);
@@ -266,5 +277,6 @@
 		protected System.Windows.Forms.TextBox tbEmail;
 		protected System.Windows.Forms.TextBox tbPhone;
 		protected System.Windows.Forms.PictureBox pbPhoto;
+		private System.Windows.Forms.Label labelID;
 	}
 }
