@@ -25,6 +25,7 @@ namespace Academy
 		}
 		
 		public StudentForm(int id):this()
+
 		{
 			DataTable data = DataBase.Connector.Select("*", "Students", $"stud_id={id}");
 			//object[] arr = data.Rows[0].ItemArray ;
@@ -33,6 +34,8 @@ namespace Academy
 			human = student;
 			Extract();
 			cbGroup.SelectedValue = student.group;
+			//if(student.photo!= null) 
+				pbPhoto.Image = DataBase.Connector.DownloadPhoto("Students", "photo", student.id);
 		}
 
 		protected override void buttonOK_Click(object sender, EventArgs e)
