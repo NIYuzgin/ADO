@@ -1,2 +1,2 @@
-﻿INSERT Teachers(last_name,first_name,middle_name,birth_date,email,phone, work_since, rate)
-VALUES (N'laksdjflsakdf',N's;ldkf;lsdkf',N'',N'2026-04-13',N'',N'',N'2026-04-13', 2350)
+﻿UPDATE Teachers SET last_name = N'ddd',first_name = N'aaa',middle_name = N'fff',birth_date = N'2026-04-13',email = N'ghgh@bn.ru',phone = N'                ',work_since = N'2026-04-13',rate = 50 
+WHERE teacher id = 11

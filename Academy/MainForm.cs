@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+using Academy.Models;
 
 namespace Academy
 {
@@ -149,6 +150,16 @@ namespace Academy
 				tabControl_SelectedIndexChanged(tabControl,null );
 }
 
+		}
+
+		private void dgvTeachers_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			TecherForm form = new TecherForm
+			(
+				Convert.ToInt32(dgvTeachers.Rows[e.RowIndex].Cells["teacher_id"].Value)
+			);
+			if(form.ShowDialog() ==DialogResult.OK)
+				tabControl_SelectedIndexChanged(tabControl, null );
 		}
 	}
 }
